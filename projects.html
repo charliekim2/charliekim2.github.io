@@ -1,0 +1,157 @@
+<!doctype html>
+<html data-theme="gruvbox">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/static/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  </head>
+  <body class="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
+    <main class="flex flex-col mt-6 px-2 md:px-0">
+      <aside class="mb-16">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a
+              class="btn btn-neutral btn-square btn-ghost text-4xl font-serif"
+              href="/"
+              >ck</a
+            >
+          </div>
+          <div class="flex-none">
+            <a class="btn btn-ghost text-xl" href="/about">about</a>
+            <a class="btn btn-ghost text-xl" href="/experience">work</a>
+            <a class="btn btn-ghost text-xl" href="/projects">projects</a>
+          </div>
+          <div class="flex-none">
+            <button
+              data-toggle-theme="gruvbox,light"
+              data-act-class="ACTIVECLASS"
+              class="btn btn-square btn-ghost"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <section class="flex flex-col justify-center px-2">
+        <h1 class="text-4xl font-black">my projects</h1>
+        <div class="collapse mt-10 bg-base-200">
+          <input type="radio" name="my-accordion-1" checked="checked" />
+          <div class="collapse-title text-xl font-medium">
+            Multilingual Readers Interface
+          </div>
+          <div class="collapse-content">
+            <p>
+              A web interface enabling teachers to download multilingual
+              recordings of audiobooks so students can easily learn new
+              languages (via the
+              <a href="https://www.chameleon-reader.com/" class="link"
+                >Chameleon Reader</a
+              >). Myself and a small team created comprehensive project
+              requirements, documentation, and testing/deployment pipelines for
+              the project to enable a seamless handoff to our client once the
+              interface was completed.
+            </p>
+            <div class="flex space-x-4 mt-4">
+              <a
+                class="link link-hover link-success"
+                href="https://cmput401.ca/projects/462e870e-c1f4-4f36-907e-749422e6846d"
+                >demo</a
+              >
+              <a
+                class="link link-hover link-info"
+                href="https://ualberta-cmput401.github.io/w24project-abc_multilingual/"
+                >docs</a
+              >
+            </div>
+            <div class="flex space-x-1 mt-4">
+              <div class="flex-1">
+                <div class="badge badge-primary">Django</div>
+                <div class="badge badge-primary">MySQL</div>
+                <div class="badge badge-secondary">NextJS</div>
+                <div class="badge badge-secondary">Typescript</div>
+                <div class="badge badge-neutral">Docker</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse bg-base-200">
+          <input type="radio" name="my-accordion-1" />
+          <div class="collapse-title text-xl font-medium">
+            Catch Me If You Scan
+          </div>
+          <div class="collapse-content">
+            <p>
+              An Android game where the goal is to scan QR codes to collect
+              procedurally generated monsters and gain points (totally not like
+              Pokemon GO). Send comments, view and interact with other players,
+              and see where people are scanning monsters on a live global map.
+            </p>
+            <div class="mt-4">
+              <a
+                class="link link-hover link-info"
+                href="https://github.com/CMPUT301W23T07/catch-me-if-you-scan"
+                >github</a
+              >
+            </div>
+            <div class="flex space-x-1 mt-4">
+              <div class="flex-1">
+                <div class="badge badge-primary">Java</div>
+                <div class="badge badge-primary">Android</div>
+                <div class="badge badge-secondary">Firebase</div>
+                <div class="badge badge-neutral">Mockito</div>
+                <div class="badge badge-neutral">Espresso</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse bg-base-200">
+          <input type="radio" name="my-accordion-1" />
+          <div class="collapse-title text-xl font-medium">
+            Live Chat Appplication (WIP)
+          </div>
+          <div class="collapse-content">
+            <p>
+              A live chat application where users can sign up, create chat
+              channels, and invite their friends to have group discussions. Uses
+              Golang and the Pocketbase framework, with a local sqlite database,
+              server side rendering, and websocket based connectivity. An
+              exercise in building a "serverful", HATEOAS architecture as
+              opposed to modern serverless / frontend heavy (React, Vue, etc.)
+              frameworks.
+            </p>
+            <div class="mt-4">
+              <a
+                class="link link-hover link-info"
+                href="https://github.com/charliekim2/chatapp"
+                >github</a
+              >
+            </div>
+            <div class="flex space-x-1 mt-4">
+              <div class="flex-1">
+                <div class="badge badge-primary">Golang</div>
+                <div class="badge badge-primary">Echo</div>
+                <div class="badge badge-primary">Templ</div>
+                <div class="badge badge-secondary">sqlite</div>
+                <div class="badge badge-neutral">AlpineJS</div>
+                <div class="badge badge-neutral">HTMX</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

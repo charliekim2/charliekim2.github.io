@@ -1,0 +1,173 @@
+<!doctype html>
+<html data-theme="gruvbox">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/static/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  </head>
+  <body class="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
+    <main class="flex flex-col mt-6 px-2 md:px-0">
+      <aside class="mb-16">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a
+              class="btn btn-neutral btn-square btn-ghost text-4xl font-serif"
+              href="/"
+              >ck</a
+            >
+          </div>
+          <div class="flex-none">
+            <a class="btn btn-ghost text-xl" href="/about">about</a>
+            <a class="btn btn-ghost text-xl" href="/experience">work</a>
+            <a class="btn btn-ghost text-xl" href="/projects">projects</a>
+          </div>
+          <div class="flex-none">
+            <button
+              data-toggle-theme="gruvbox,light"
+              data-act-class="ACTIVECLASS"
+              class="btn btn-square btn-ghost"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+      <section class="flex flex-col justify-center px-2">
+        <h1 class="text-4xl font-black">about me</h1>
+        <h2 class="mt-10 text-2xl font-bold">Education</h2>
+        <hr class="h-px my-2 bg-base-content border-0 rounded" />
+        <h3 class="text-xl">University of Alberta</h3>
+        <p class="text-md italic">BSc. Computer Science with Specialization</p>
+        <div class="flex mt-4 space-x-1">
+          <div class="flex-1">
+            <div class="badge badge-primary">Web development</div>
+            <div class="badge badge-secondary">DevOps</div>
+            <div class="badge badge-secondary">Software testing</div>
+            <div class="badge badge-neutral">Machine learning</div>
+            <div class="badge badge-accent">Operating systems</div>
+            <div class="badge badge-accent">Networks</div>
+            <div class="badge badge-primary">Mobile development</div>
+            <div class="badge badge-secondary">OOP</div>
+            <div class="badge badge-accent">Databases</div>
+            <div class="badge badge-neutral">Algorithms</div>
+            <div class="badge badge-neutral">Statistics</div>
+            <div class="badge badge-neutral">Linear algebra</div>
+            <div class="badge badge-neutral">Calculus</div>
+            <div class="badge badge-accent">Management science</div>
+          </div>
+        </div>
+        <h2 class="mt-8 text-2xl font-bold">Skills</h2>
+        <hr class="h-px my-2 bg-base-content border-0 rounded" />
+        <div class="flex space-x-8">
+          <ul class="list-disc flex-1">
+            <li>
+              <div class="flex">
+                <div class="badge badge-accent">Python</div>
+                <p class="ml-auto">7 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-accent">Javascript</div>
+                <p class="ml-auto">7 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-secondary">Java</div>
+                <p class="ml-auto">3 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-primary">C/C++</div>
+                <p class="ml-auto">3 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-secondary">SQL</div>
+                <p class="ml-auto">3 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-primary">Golang</div>
+                <p class="ml-auto">1 year</p>
+              </div>
+            </li>
+            <li>and R, MATLAB, Julia, Lisp, Lua...</li>
+          </ul>
+          <ul class="list-disc ml-auto flex-1">
+            <li>
+              <div class="flex">
+                <div class="badge badge-primary">Git</div>
+                <p class="ml-auto">4 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-secondary">NodeJS</div>
+                <p class="ml-auto">4 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-neutral">Android</div>
+                <p class="ml-auto">3 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-secondary">React</div>
+                <p class="ml-auto">2 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-secondary">Django</div>
+                <p class="ml-auto">1 years</p>
+              </div>
+            </li>
+            <li>
+              <div class="flex">
+                <div class="badge badge-accent">Docker</div>
+                <p class="ml-auto">1 year</p>
+              </div>
+            </li>
+            <li>And Linux, MongoDB, Selenium...</li>
+          </ul>
+        </div>
+        <h2 class="mt-8 text-2xl font-bold">Interests</h2>
+        <hr class="h-px my-2 bg-base-content border-0 rounded" />
+        <div class="flex space-x-8">
+          <ul class="list-disc">
+            <li>Learning new languages and frameworks</li>
+            <li>
+              Neovim (check out my
+              <a class="link" href="https://github.com/charliekim2/nvim"
+                >config on github</a
+              >!)
+            </li>
+            <li>Playing the piano / making music</li>
+            <li>Working out</li>
+            <li>Learning Japanese</li>
+            <li>Playing chess and doing puzzles</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
