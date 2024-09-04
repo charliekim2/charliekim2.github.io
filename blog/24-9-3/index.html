@@ -1,0 +1,85 @@
+<!doctype html>
+<html data-theme="gruvbox">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>charlie kim - blog</title>
+    <link rel="icon" href="/static/favicon.ico" />
+    <link href="/static/output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/zero-md@3?register"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  </head>
+  <body class="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
+    <main class="flex flex-col mt-6 px-2 md:px-0">
+      <aside class="mb-16">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a
+              class="btn btn-neutral btn-square btn-ghost text-4xl font-serif"
+              href="/"
+              >ck</a
+            >
+          </div>
+          <div class="flex-none">
+            <a class="btn btn-ghost text-xl" href="/about">about</a>
+            <a class="btn btn-ghost text-xl" href="/experience">work</a>
+            <a class="btn btn-ghost text-xl" href="/projects">projects</a>
+          </div>
+          <div class="flex-none">
+            <button
+              data-toggle-theme="gruvbox,light"
+              data-act-class="ACTIVECLASS"
+              class="btn btn-square btn-ghost"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+      <section class="flex flex-col justify-center px-2">
+        <zero-md src="contents.md">
+          <template>
+            <style>
+              a {
+                color: cornflowerblue;
+              }
+              table,
+              th,
+              td {
+                border: 1px solid;
+              }
+              td {
+                padding-left: 8px;
+                padding-right: 8px;
+              }
+              code {
+                border-radius: 0.5rem;
+              }
+            </style>
+
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+            />
+          </template>
+        </zero-md>
+      </section>
+      <footer class="mb-16"></footer>
+    </main>
+  </body>
+</html>
