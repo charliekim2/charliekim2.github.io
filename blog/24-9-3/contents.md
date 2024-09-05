@@ -383,7 +383,9 @@ def _scan_once(string, idx):
 First of all, rather than lexing tokens and parsing them in separate tasks, `json.load` does both at the same time.
 That already gets rid of most of the conditional control flow, and assuming a typical JSON object consisting of strings and brackets/braces, the if/else chain should return fairly early most of the time.
 
-You may have noticed and winced at all the string slicing we did, which is worst-case O(n) time - `json.load` instead uses the index `idx` to traverse the JSON string and avoid copying or modifying the string.
+You may have noticed and winced at all the string slicing we did, which ran on every string parse and `getChar()` call, and is worst-case O(n) time.
+For very long strings this is especially bad, as that means equally long slicing time.
+`json.load` instead uses the index `idx` to traverse the JSON string and avoid copying or modifying the string.
 
 Add those things to the fact that it reads the whole file into memory rather than one line at a time, avoiding the overhead of reading disk - and it becomes clear why `json.load` is so much faster, even without some C code helping out.
 
