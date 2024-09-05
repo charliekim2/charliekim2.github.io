@@ -381,9 +381,15 @@ def _scan_once(string, idx):
 ```
 
 First of all, rather than lexing tokens and parsing them in separate tasks, `json.load` does both at the same time.
-Secondly, rather than reading lines one at a time from the file stream, it calls `read()` to load the entire file into memory and avoid overhead from accessing disk for each new line.
-This will be a lot faster in most cases but will not work if the file is too large to fit into memory, so I'd say that's at least one win for us.
-While we lose this advantage in the case of a minified JSON file with no line breaks, it would be easy to fix by using `read(int)` to load a fixed number of bytes into memory each time.
+That already gets rid of most of the conditional control flow, and assuming a typical JSON object consisting of strings and brackets/braces, the if/else chain should return fairly early most of the time.
+
+You may have noticed and winced at all the string slicing we did, which is worst-case O(n) time - `json.load` instead uses the index `idx` to traverse the JSON string and avoid copying or modifying the string.
+
+Add those things to the fact that it reads the whole file into memory rather than one line at a time, avoiding the overhead of reading disk - and it becomes clear why `json.load` is so much faster, even without some C code helping out.
+
+As an aside, loading entire files into memory is a great plan until the files become too big to fit.
+And while `readline()` does prevent this issue for nice, human readable JSON with lots of line breaks, it also runs into problems when you try to lex a minified file with all the whitespace removed.
+The best solution would be to use `load(int)` to fetch fixed-size chunks from the file.
 
 ## Conclusion
 
