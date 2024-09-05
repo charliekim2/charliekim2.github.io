@@ -391,7 +391,7 @@ Add those things to the fact that it reads the whole file into memory rather tha
 
 As an aside, loading entire files into memory is a great plan until the files become too big to fit.
 And while `readline()` does prevent this issue for nice, human readable JSON with lots of line breaks, it also runs into problems when you try to lex a minified file with all the whitespace removed.
-The best solution would be to use `load(int)` to fetch fixed-size chunks from the file.
+The best solution would be to use `read(int)` to fetch fixed-size chunks from the file.
 
 ## Conclusion
 
