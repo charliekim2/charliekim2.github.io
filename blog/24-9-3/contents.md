@@ -18,7 +18,7 @@ Gone are the days of monolithic architectures serving HTML populated with data f
 Now, your React single page application (SPA) receives and deserializes JSON payloads from GraphQL queries to a dozen different microservices, which themselves receive, deserialize, and reserialize JSON from separate, sharded NoSQL databases storing binary JSON (BSON) in the cloud.
 You gotta love the elegant simplicity of modern web dev!
 
-When it's done, this deserializer should closely follow the behavior of the native Python implementation of a JSON deserializer - `json.load`.
+When it's done, this deserializer should closely follow the behavior of the JSON deserializer in the Python standard library - `json.load`.
 It will take a file pointer to a .json file and produce a Python dictionary mapping keys to values.
 Internally, it will be loading the file into memory line by line, lexing out tokens, and parsing these tokens in order to produce Python data types associated with each JSON data type:
 
@@ -124,7 +124,7 @@ And you'd be right - except that [ Pythons JSON library ](https://docs.python.or
 > "If allow_nan is true (the default), then NaN, Infinity, and -Infinity will be encoded as such. This behavior is not JSON specification compliant, but is consistent with most JavaScript based encoders and decoders."
 
 Clearly every language has a well defined and consistent implementation of these concepts, so I'm sure this extra feature will be appreciated by all.
-With lexing constants done, the last things to do are lex structural tokens like brackets, braces, and commas. and put it all together.
+With lexing constants done, the last things to do are lex structural tokens like brackets, braces, and commas, and put it all together.
 
 ```python
 def getTok(self) -> str:
@@ -159,7 +159,7 @@ The completed lexer code can be found [here](https://github.com/charliekim2/json
 
 ## The Parser
 
-Onto the parser, which will use `getTok()` from a Lexer instance to construct a dictionary/list from (hopefully) valid JSON object.
+Onto the parser, which will use `getTok()` from a Lexer instance to construct a dictionary/list from a (hopefully) valid JSON object.
 
 ```python
 class Parser:
@@ -381,7 +381,7 @@ def _scan_once(string, idx):
 ```
 
 First of all, rather than lexing tokens and parsing them in separate tasks, `json.load` does both at the same time.
-That already gets rid of most of the conditional control flow, and assuming a typical JSON object consisting of strings and brackets/braces, the if/else chain should return fairly early most of the time.
+That already gets rid of most of the conditional control flow, and assuming a typical JSON object consisting of mostly strings and brackets/braces, the if/else chain should return fairly early most of the time.
 
 You may have noticed and winced at all the string slicing we did, which ran on every string parse and `getChar()` call, and is worst-case O(n) time.
 For very long strings this is especially bad, as that means equally long slicing time.
@@ -390,7 +390,7 @@ For very long strings this is especially bad, as that means equally long slicing
 Add those things to the fact that it reads the whole file into memory rather than one line at a time, avoiding the overhead of reading disk - and it becomes clear why `json.load` is so much faster, even without some C code helping out.
 
 As an aside, loading entire files into memory is a great plan until the files become too big to fit.
-And while `readline()` does prevent this issue for nice, human readable JSON with lots of line breaks, it also runs into problems when you try to lex a minified file with all the whitespace removed.
+And while `readline()` does prevent this issue for nice, human readable JSON with lots of line breaks, it also runs into memory problems when you try to lex a minified file with all the whitespace removed.
 The best solution would be to use `read(int)` to fetch fixed-size chunks from the file.
 
 ## Conclusion
